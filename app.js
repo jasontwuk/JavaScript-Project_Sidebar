@@ -20,3 +20,13 @@ sidebarToggleBtn.addEventListener('click', function(){
 closeBtn.addEventListener('click', function(){
     sidebar.classList.remove('show-sidebar');
 });
+
+// click elsewhere other than sidebarToggleBtn and sidebar area, then the sidebar will be closed
+window.addEventListener('click', function(e){
+    if(e.target.parentNode != sidebarToggleBtn && e.target.parentNode != sidebar && e.target != sidebar){
+        // console.log(e.target);
+        if(sidebar.classList.contains('show-sidebar')){
+            sidebar.classList.remove('show-sidebar');
+        }
+    }
+});
